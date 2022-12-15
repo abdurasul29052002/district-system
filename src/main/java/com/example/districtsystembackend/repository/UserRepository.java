@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findAllByFirstNameLike(String firstName);
+    List<User> findAllByFirstNameIsLike(String firstName);
 
-    List<User> findAllByLastNameLike(String lastName);
+    List<User> findAllByLastNameIsLike(String lastName);
 
-    List<User> findAllByFathersNameLike(String fathersName);
+    List<User> findAllByFathersNameIsLike(String fathersName);
 }
