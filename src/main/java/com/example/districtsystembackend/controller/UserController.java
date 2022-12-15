@@ -42,7 +42,7 @@ public class UserController {
     }
 
     @GetMapping("/search")
-    public Set<UserModel> search(@RequestParam String name){
+    public List<UserModel> search(@RequestParam String name){
         return userService.search(name);
     }
 }

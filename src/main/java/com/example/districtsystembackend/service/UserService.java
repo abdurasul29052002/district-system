@@ -50,14 +50,8 @@ public class UserService {
         }
     }
 
-    public Set<UserModel> search(String name) {
-        List<User> firstNameLike = userRepository.findAllByFirstNameIsLike(name);
-        List<User> lastNameLike = userRepository.findAllByLastNameIsLike(name);
-        List<User> fathersNameLike = userRepository.findAllByFathersNameIsLike(name);
-        HashSet<UserModel> searchResult = new HashSet<>();
-        searchResult.addAll(userMapper.entitiesToModels(firstNameLike));
-        searchResult.addAll(userMapper.entitiesToModels(lastNameLike));
-        searchResult.addAll(userMapper.entitiesToModels(fathersNameLike));
-        return searchResult;
+    public List<UserModel> search(String name) {
+        List<User> users = userRepository.searchAllByName(name);
+        return userMapper.entitiesToModels(users);
     }
 }
