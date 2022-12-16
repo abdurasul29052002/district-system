@@ -8,6 +8,7 @@ import com.example.districtsystembackend.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -50,8 +51,10 @@ public class UserService {
         }
     }
 
-    public List<UserModel> search(String name) {
-        List<User> users = userRepository.searchAllByName(name.toLowerCase());
-        return userMapper.entitiesToModels(users);
+    public Set<UserModel> search(String name) {
+        List<User> users = new ArrayList<>();
+        users.addAll(userRepository.searchAllByName(name.toLowerCase()));
+        users.addAll(userRepository.searchAllByName(name.toLowerCase()));
+        return new HashSet<>(userMapper.entitiesToModels(users));
     }
 }

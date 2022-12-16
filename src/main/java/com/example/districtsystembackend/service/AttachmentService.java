@@ -55,7 +55,7 @@ public class AttachmentService {
         AttachmentModel attachmentModel = getById(id);
         AttachmentContentModel attachmentContent = attachmentModel.getAttachmentContent();
         response.setContentType(attachmentModel.getContentType());
-        response.addHeader("Content-Disposition", "attachment; filename=\"" + attachmentModel.getOriginalFileName() + "\"");
+        response.addHeader("Content-Disposition", "inline; filename=\"" + attachmentModel.getOriginalFileName() + "\"");
         FileCopyUtils.copy(attachmentContent.getBytes(), response.getOutputStream());
     }
 
