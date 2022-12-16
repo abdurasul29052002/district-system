@@ -3,6 +3,7 @@ package com.example.districtsystembackend.controller;
 import com.example.districtsystembackend.model.AttachmentModel;
 import com.example.districtsystembackend.service.AttachmentService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartRequest;
 
@@ -22,7 +23,7 @@ public class AttachmentController {
     }
 
     @GetMapping("/download/{attachmentId}")
-    public void download(@PathVariable Long attachmentId, HttpServletResponse response) {
-        attachmentService.downloadById(attachmentId, response);
+    public void download(@PathVariable Long attachmentId, HttpServletResponse response){
+        attachmentService.downloadById(attachmentId,response);
     }
 }
