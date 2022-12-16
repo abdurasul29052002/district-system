@@ -29,4 +29,6 @@ public class UserModel {
     private String serialNumber;
 
     private String JSHSHIR;
+
+    private AttachmentModel photo;
 }

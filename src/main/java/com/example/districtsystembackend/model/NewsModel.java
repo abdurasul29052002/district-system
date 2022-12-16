@@ -13,4 +13,6 @@ public class NewsModel {
     private String title;
 
     private String content;
+
+    private AttachmentModel photo;
 }

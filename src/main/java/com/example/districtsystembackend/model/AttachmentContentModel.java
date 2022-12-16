@@ -1,20 +1,16 @@
 package com.example.districtsystembackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeclareModel {
+public class AttachmentContentModel {
     private Long id;
 
-    private String title;
-
-    private String content;
-
-    private Date date = new Date();
+    @JsonIgnore
+    private byte[] bytes;
 }

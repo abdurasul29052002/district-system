@@ -10,14 +10,18 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class News {
+public class Attachment {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String name;
 
-    private String content;
+    private String originalFileName;
+
+    private String contentType;
+
+    private Long size;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Attachment photo;
+    private AttachmentContent attachmentContent;
 }

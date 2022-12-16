@@ -34,4 +34,7 @@ public class User {
     private String serialNumber;
 
     private String JSHSHIR;
+
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Attachment photo;
 }

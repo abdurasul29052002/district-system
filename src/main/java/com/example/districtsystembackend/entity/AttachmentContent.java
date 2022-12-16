@@ -10,14 +10,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class News {
+public class AttachmentContent {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private byte[] bytes;
 
-    private String content;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Attachment photo;
+    @OneToOne(mappedBy = "attachmentContent")
+    private Attachment attachment;
 }

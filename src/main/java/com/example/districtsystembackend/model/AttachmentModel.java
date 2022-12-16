@@ -4,17 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DeclareModel {
+public class AttachmentModel {
     private Long id;
 
-    private String title;
+    private String name;
 
-    private String content;
+    private String originalFileName;
 
-    private Date date = new Date();
+    private String contentType;
+
+    private Long size;
+
+    private AttachmentContentModel attachmentContent;
 }

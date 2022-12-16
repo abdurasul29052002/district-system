@@ -51,7 +51,7 @@ public class UserService {
     }
 
     public List<UserModel> search(String name) {
-        List<User> users = userRepository.searchAllByName(name);
+        List<User> users = userRepository.searchAllByName(name.toLowerCase());
         return userMapper.entitiesToModels(users);
     }
 }
