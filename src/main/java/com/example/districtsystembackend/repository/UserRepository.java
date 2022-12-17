@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query(value = "select u from users u where u.firstName like concat('%',:name,'%') or u.lastName like concat('%',:name,'%') or u.fathersName like concat('%',:name,'%')")
+    @Query(value = "select u from users u where upper(u.firstName) like upper(concat('%',:name,'%')) or upper(u.lastName) like upper(concat('%',:name,'%')) or upper(u.fathersName) like upper(concat('%',:name,'%'))")
     List<User> searchAllByName(String name);
 }
