@@ -54,7 +54,7 @@ public class UserService {
     public Set<UserModel> search(String name) {
         List<User> users = new ArrayList<>();
         users.addAll(userRepository.searchAllByName(name.toLowerCase()));
-        users.addAll(userRepository.searchAllByName(name.toLowerCase()));
+        users.addAll(userRepository.searchAllByName(name));
         return new HashSet<>(userMapper.entitiesToModels(users));
     }
 }
