@@ -18,6 +18,6 @@ public class News {
 
     private String content;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     private Attachment photo;
 }
